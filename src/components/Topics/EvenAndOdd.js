@@ -11,7 +11,8 @@ class EvenAndOdd extends Component {
   }
 
   handleChange = e => {
-    this.setState({ userInput: e });
+    // this.setState({ userInput: e });
+    this.setState({ userInput: e.target.value });
   };
 
   handleClick = userInput => {
@@ -30,12 +31,14 @@ class EvenAndOdd extends Component {
   };
 
   render() {
+    console.log("input ", this.state.userInput);
     return (
       <div className="puzzleBox evenAndOddPB">
         <h4>Evens and Odds</h4>
         <input
           className="inputLine"
-          onChange={e => this.handleChange(e.target.value)}
+          //   onChange={e => this.handleChange(e.target.value)}
+          onChange={e => this.handleChange(e)}
         />
         <button
           className="confirmationButton"
